@@ -1,0 +1,39 @@
+/* 
+ * File:   main.c
+ * Author: eps
+ *
+ * Created on 11 de noviembre de 2014, 12:41
+ * GENEDADOR DE PARTIDAS
+ * ::::::::::::::::::::::::::::::::::::::::::::INICIAR PARTIDA::::::::::::::::::::::::::::::::::::::::::::::::
+    EN PROCESO
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 8;
+#define BLANCO 'x'
+#define NEGRO 'o'
+
+
+char** crearTablero(); //Todavia lo estoy pensando, debo repasar punteros
+void crearTurno();
+void cambiarTurno(char * Turno);
+void imprimirTablero(char * Tablero);
+void imprimirCabecera();
+
+char** crearTablero(){//No me creo que esto de, aun no lo he compilado
+    char* tablero[];
+    int i, j;
+    for(i=0; i<MAX+1; i++){
+        for(j=0; j<MAX+1; j++){
+            tablero[i][j]=NULL;
+            printf("%d,%d:%s \n", i, j, tablero[i][j]);
+        }
+    }
+    
+}
+
+int main(int argc, char** argv) {
+    char** tablero=crearTablero();
+    return 0;
+}
