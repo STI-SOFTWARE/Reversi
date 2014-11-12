@@ -5,35 +5,50 @@
  * Created on 11 de noviembre de 2014, 12:41
  * GENEDADOR DE PARTIDAS
  * ::::::::::::::::::::::::::::::::::::::::::::INICIAR PARTIDA::::::::::::::::::::::::::::::::::::::::::::::::
-    EN PROCESO
+ *  EN PROCESO
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 8;
+#define MAX 8
 #define BLANCO 'x'
 #define NEGRO 'o'
 
 
-char** crearTablero(); //Todavia lo estoy pensando, debo repasar punteros
+void crearTablero(char tablero[MAX+1][MAX+1]); //si se asigna un puntero libre habria que hacer una reserva dinamica de memoria
 void crearTurno();
 void cambiarTurno(char * Turno);
-void imprimirTablero(char * Tablero);
+void imprimirTablero(char  Tablero[MAX+1][MAX+1]);
 void imprimirCabecera();
 
-char** crearTablero(){//No me creo que esto de, aun no lo he compilado
-    char* tablero[];
+void crearTablero(char tablero[MAX+1][MAX+1]){
     int i, j;
     for(i=0; i<MAX+1; i++){
         for(j=0; j<MAX+1; j++){
-            tablero[i][j]=NULL;
-            printf("%d,%d:%s \n", i, j, tablero[i][j]);
+            tablero[i][j]=' ';
+        }   
+    }
+    for(i=1; i<=MAX; i++){
+        tablero[0][i] = 'A'+i-1;
+        tablero[i][0] = '1'+i-1; 
+    }
+    tablero[4][4]= BLANCO;
+    tablero [5][5]= BLANCO;
+    tablero[5][4]= NEGRO;
+    tablero [4][5]= NEGRO;
+}
+void imprimirTablero(char tablero[MAX+1][MAX+1]){
+    int i,j;
+    for(i=0; i<MAX+1; i++){
+        printf("\n");
+        for(j=0; j<MAX+1; j++){
+           printf("%c ",tablero[i][j]);
         }
     }
-    
 }
-
 int main(int argc, char** argv) {
-    char** tablero=crearTablero();
+    char tablero[MAX+1][MAX+1];
+    crearTablero(tablero);
+    imprimirTablero(tablero);
     return 0;
 }
