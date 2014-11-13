@@ -57,7 +57,7 @@ char crearTurno(){
     }while(ficha!=1 || ficha!=2);
     if(ficha==1){
         turno=BLANCO;
-    }else if(ficha==0){
+    }else if(ficha==2){
         turno=NEGRO;
     }
      printf("\nficha elegida: %s", turno);
