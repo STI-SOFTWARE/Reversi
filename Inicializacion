@@ -54,7 +54,7 @@ char crearTurno(){
     do{
         printf("\nElija la ficha: \n 1.X\n 2.O\n");
         scanf("%d", ficha);
-    }while(ficha!=1 || ficha!=0);
+    }while(ficha!=1 || ficha!=2);
     if(ficha==1){
         turno=BLANCO;
     }else if(ficha==0){
