@@ -10,15 +10,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define MAX 8
 #define BLANCO 'x'
 #define NEGRO 'o'
 
 
 void crearTablero(char tablero[MAX+1][MAX+1]); //si se asigna un puntero libre habria que hacer una reserva dinamica de memoria
-void crearTurno();
-void cambiarTurno(char * Turno);
 void imprimirTablero(char  Tablero[MAX+1][MAX+1]);
+char crearTurno();
+void cambiarTurno(char *turno);
+void imprimirTurno(char turno);
 void imprimirCabecera();
 
 void crearTablero(char tablero[MAX+1][MAX+1]){
@@ -46,9 +48,40 @@ void imprimirTablero(char tablero[MAX+1][MAX+1]){
         }
     }
 }
+char crearTurno(){
+    char turno;
+    int ficha;
+    do{
+        printf("\nElija la ficha: \n 1.X\n 2.O\n");
+        scanf("%d", ficha);
+    }while(ficha!=1 || ficha!=0);
+    if(ficha==1){
+        turno=BLANCO;
+    }else if(ficha==0){
+        turno=NEGRO;
+    }
+     printf("\nficha elegida: %s", turno);
+    return turno;
+}
+/*void cambiarTurno(char* turno){
+    if(strcmp( turno,  NEGRO)){
+        *turno=BLANCO;
+    }else{
+        *turno=NEGRO;
+    }
+}*/
+void imprimirTurno(char turno){
+    printf("\n >>>>>>>>>>>>Turno de: %s", turno);
+}
 int main(int argc, char** argv) {
-    char tablero[MAX+1][MAX+1];
+    char tablero[MAX+1][MAX+1], turno;
+    
     crearTablero(tablero);
     imprimirTablero(tablero);
+    turno=crearTurno();
+    //imprimirTurno(turno);
+    
+    //cambiarTurno(&turno);
+    //imprimirTurno(turno);
     return 0;
 }
