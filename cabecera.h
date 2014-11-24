@@ -10,7 +10,7 @@ extern "C" {
 
 void imprimirTablero(char Tablero[MAX + 1][MAX + 1]);
 void imprimirContador(char  tablero[][]);
-void imprimirTurno(char turno)
+void imprimirTurno(char turno);
 
 void imprimirCabecera();
 void salir();
