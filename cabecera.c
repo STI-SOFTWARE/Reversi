@@ -27,3 +27,6 @@ void imprimirCabecera(){
 void imprimirContador(char tablero[][]){
     printf("x: %d \t\t\t\t o:%d", contarFichas("x", tablero), contarFichas("o", tablero));
 }
+void imprimirTurno(char turno){
+    printf("\n >>>>>>>>>>>>Turno de: %s", turno);
+}
