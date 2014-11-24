@@ -5,7 +5,7 @@ ifndef REVERSI_H
 extern "C" {
 #endif
 #define MAX 8
-    
+#define Vacio '.'    
 void crearTablero(char tablero[MAX + 1][MAX + 1]);
 void crearTurno();
 void cambiarTurno(char * Turno);
