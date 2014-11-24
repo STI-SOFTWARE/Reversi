@@ -1,12 +1,7 @@
 #include <stdio.h>
-#include "reversi.h"
-typedef struct{
-    char nombre[3];
-    char ficha;
-}Jugador;
-enum {TRUE=1, FALSE=0}Boolean;
+#include "partidas.h"
 
-void main(){
+void inicializarPartida(){
     int jugar=-1;
     Turno turnoActual;
     Jugador jugador1, jugador2;
