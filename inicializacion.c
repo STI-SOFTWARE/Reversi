@@ -70,18 +70,4 @@ char crearTurno(){
         *turno=NEGRO;
     }
 }*/
-void imprimirTurno(char turno){
-    printf("\n >>>>>>>>>>>>Turno de: %s", turno);
-}
-int main(int argc, char** argv) {
-    char tablero[MAX+1][MAX+1], turno;
-    
-    crearTablero(tablero);
-    imprimirTablero(tablero);
-    turno=crearTurno();
-    //imprimirTurno(turno);
-    
-    //cambiarTurno(&turno);
-    //imprimirTurno(turno);
-    return 0;
-}
+
