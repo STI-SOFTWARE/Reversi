@@ -12,5 +12,18 @@ int imprimirMenu(){
         return opcion;
 }
 void salir(){
+    int i=0;
+    while(i++<20){
+        printf("\n");
+    }
     printf("Gracias por jugar con nosotros.\n\tVuelva pronto.");
+}
+void imprimirCabecera(){
+    printf(">>>>>>>>>>>>>>Bienvenido a Reversi\n");
+    imprimirContador(NULL);
+    imprimirTablero(NULL);
+}
+
+void imprimirContador(char tablero[][]){
+    printf("x: %d \t\t\t\t o:%d", contarFichas("x", tablero), contarFichas("o", tablero));
 }
