@@ -15,7 +15,7 @@ typedef struct{
 }Ficha;
 typedef struct{
     char nombre[3];
-    char ficha;
+    char fichaElegida;
 }Jugador;
 enum {TRUE=1, FALSE=0}Boolean;
 
