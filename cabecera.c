@@ -29,3 +29,98 @@ void main(){
             break;
     }
 }
+int comprobarMovimiento(char tablero[MAX + 1][MAX + 1], char ficha, int posx, int posy) {
+    int i;
+    if (ficha == BLANCO) {
+        if (tablero[posx][posy + 1] == NEGRO) {
+            for (i = 2; posy + i < MAX; i++)
+                if (tablero[posx][posy + i] == BLANCO)
+                    return 1;
+        }
+        if (tablero[posx][posy - 1] == NEGRO) {
+            for (i = 2; posy - i > 0; i++)
+                if (tablero[posx][posy - i] == BLANCO)
+                    return 1;
+        }
+        if (tablero[posx + 1][posy] == NEGRO) {
+            for (i = 2; posx + i < MAX; i++)
+                if (tablero[posx + i][posy] == BLANCO)
+                    return 1;
+        }
+        if (tablero[posx - 1][posy] == NEGRO) {
+            for (i = 2; posx + i > 0; i++)
+                if (tablero[posx - i][posy] == BLANCO)
+                    return 1;
+        }
+        if (tablero[posx + 1][posy + 1] == NEGRO) {
+            for (i = 2; posx + i < MAX || posy + i < MAX; i++) {
+                if (tablero[posx + i][posy + i] == BLANCO)
+                    return 1;
+            }
+        }
+        if (tablero[posx - 1][posy - 1] == NEGRO) {
+            for (i = 2; posx - i > 0 || posy - i > 0; i++) {
+                if (tablero[posx - i][posy - i] == BLANCO)
+                    return 1;
+            }
+        }
+        if (tablero[posx - 1][posy + 1] == NEGRO) {
+            for (i = 2; posx - i > 0 || posy + i < MAX; i++) {
+                if (tablero[posx - i][posy + i] == BLANCO)
+                    return 1;
+            }
+        }
+        if (tablero[posx + 1][posy - 1] == NEGRO) {
+            for (i = 2; posx - i < MAX || posy - i > 0; i++) {
+                if (tablero[posx + i][posy - i] == BLANCO)
+                    return 1;
+            }
+        }
+    }
+    if (ficha == NEGRO) {
+        if (tablero[posx][posy + 1] == BLANCO) {     
+            for (i = 2; posy + i < MAX; i++)
+                if (tablero[posx][posy + i] == NEGRO)
+                    return 1;
+        }
+        if (tablero[posx][posy - 1] == BLANCO) {
+            for (i = 2; posy - i > 0; i++)
+                if (tablero[posx][posy - i] == NEGRO)
+                    return 1;
+        }
+        if (tablero[posx + 1][posy] == BLANCO) {
+            for (i = 2; posx + i < MAX; i++)
+                if (tablero[posx + i][posy] == NEGRO)
+                    return 1;
+        }
+        if (tablero[posx - 1][posy] == BLANCO) {
+            for (i = 2; posx + i > 0; i++)
+                if (tablero[posx - i][posy] == NEGRO)
+                    return 1;
+        }
+        if (tablero[posx + 1][posy + 1] == BLANCO) {
+            for (i = 2; posx + i < MAX || posy + i < MAX; i++) {
+                if (tablero[posx + i][posy + i] == NEGRO)
+                    return 1;
+            }
+        }
+        if (tablero[posx - 1][posy - 1] == BLANCO) {
+            for (i = 2; posx - i > 0 || posy - i > 0; i++) {
+                if (tablero[posx - i][posy - i] == NEGRO)
+                    return 1;
+            }
+        }
+        if (tablero[posx - 1][posy + 1] == BLANCO) {
+            for (i = 2; posx - i > 0 || posy + i < MAX; i++) {
+                if (tablero[posx - i][posy + i] == NEGRO)
+                    return 1;
+            }
+        }
+        if (tablero[posx + 1][posy - 1] == BLANCO)
+            for (i = 2; posx + i < MAX || posy - i > 0; i++) {
+                if (tablero[posx + i][posy - i] == NEGRO)
+                    return 1;
+            }
+    }
+return 0;
+}
