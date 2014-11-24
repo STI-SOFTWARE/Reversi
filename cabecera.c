@@ -14,21 +14,7 @@ int imprimirMenu(){
 void salir(){
     printf("Gracias por jugar con nosotros.\n\tVuelva pronto.");
 }
-void main(){
-    int opcion=-1;
-    imprimirCabecera();
-    opcion=imprimirMenu();
-    switch(opcion){
-        case 1: 
-            inicializarPartida();
-            break;
-        case 2:
-            salir();
-            break;
-        default:
-            break;
-    }
-}
+
 /*
 /Recibe un tablero, una ficha y dos numeros
 /Devuelve 0 si la jugada no es valida y 1 si lo es.
