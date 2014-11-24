@@ -4,7 +4,7 @@
  */
 #ifndef PARTIDAS_H_
 #define PARTIDAS_H_
-#include "inicializacion.h"
+#include 'inicializacion.h'
 #ifdef	__cplusplus
 extern "C" {
 #endif
