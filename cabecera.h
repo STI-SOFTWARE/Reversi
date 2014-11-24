@@ -1,5 +1,4 @@
-/* >>>>>>>>>>>>>>>>>>>>>>>>Aqui se desarrollaran todas la funciones que dibujen la partida y el menu
-*/
+/* >>>>>>>>>>>>>>>>>>>>>>>>Aqui se desarrollaran todas la funciones que dibujen la partida y el menu      */
 #ifndef CABECERA_H_
 #define CABECERA_H_
 
@@ -7,7 +6,7 @@
 extern "C" {
 #endif
 #define MAX 8
-#define Vacio '.'    
+#define Vacio '.'   //no recuerdo para que es esto xD 
 
 void imprimirTablero(char Tablero[MAX + 1][MAX + 1]);
 void imprimirContador(char  tablero[][]);
@@ -19,10 +18,7 @@ int imprimirMenu();
 
 
 
-
-
 #ifdef	__cplusplus
 }
 #endif
-
 #endif /* CABECERA_H_ */
