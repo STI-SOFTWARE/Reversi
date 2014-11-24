@@ -19,7 +19,7 @@ void insertarFichaEnTablero(Ficha ficha, char tablero[MAX + 1][MAX + 1]);
             
     int comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha)//booleano, se pueden hacer jugadas?
     //si no se pueden hacer jugadas
-    void pasarTurno();//Imprimimos la ficha que pasa turno y hacemos cambiarTurno()
+    void pasarTurno(Ficha * ficha);//Imprimimos la ficha que pasa turno y hacemos cambiarTurno()
     //si se puede
     int comprobarTeclado(char fila, int columna);/*booleano, comprobamos lo que mete el usuario
                                      hacemos un dowhile comprobando lo que recibimos por teclado*/
