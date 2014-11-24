@@ -1,19 +1,13 @@
-/*
- * partidas.h
- *
- *  Created on: 24/11/2014
- *      Author: Android
+/*partidas.h
+ *  Created on: 24/11/2014  Author: Android
  *         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Aqui se definen todas las funciones que ejecutaran las partidas
  */
-ifndef REVERSI_H
-#define	REVERSI_H
+#ifndef PARTIDAS_H_
+#define PARTIDAS_H_
 
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
-#ifndef PARTIDAS_H_
-#define PARTIDAS_H_
 
 
 void crearTablero();
@@ -44,10 +38,9 @@ int contarFichas(char turno, char tablero[][]);
 
 void comprovarMovimiento(char Tablero[MAX + 1][MAX + 1], char ficha, int posx, int posy);
 void elegirFicha(Jugador jugador1, Jugador jugador2);
-#endif /* PARTIDAS_H_ */
+
 
 #ifdef	__cplusplus
 }
 #endif
-
-#endif	/* REVERSI_H */
+#endif /* PARTIDAS_H_ */
