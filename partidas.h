@@ -3,6 +3,7 @@
  *
  *  Created on: 24/11/2014
  *      Author: Android
+ *         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Aqui se definen todas las funciones que ejecutaran las partidas
  */
 
 #ifndef PARTIDAS_H_
