@@ -4,16 +4,10 @@
  */
 #ifndef PARTIDAS_H_
 #define PARTIDAS_H_
+#include "inicializacion.h"
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
-void crearTurno();
-void elegirFicha(Jugador jugador1, Jugador jugador2);
-void cambiarTurno(char turnoActual);
-Ficha crearFicha(char turno);
-
-void crearTablero(char tablero[MAX + 1][MAX + 1]);
 
 void insertarFichaEnTablero(Ficha ficha, char tablero[MAX + 1][MAX + 1]);
             
