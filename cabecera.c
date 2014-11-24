@@ -1,5 +1,16 @@
 #include <stdio.h>
-#include "partidas.h"
+#include 'partidas.h'
+
+void imprimirTablero(char tablero[MAX+1][MAX+1]){
+    int i,j;
+    for(i=0; i<MAX+1; i++){
+        printf("\n");
+        for(j=0; j<MAX+1; j++){
+           printf("%c ",tablero[i][j]);
+        }
+    }
+}
+
 int imprimirMenu(){
     int opcion=-1;
     do{
