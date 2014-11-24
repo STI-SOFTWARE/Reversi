@@ -1,11 +1,5 @@
 /* 
- * File:   main.c
- * Author: eps
- *
- * Created on 11 de noviembre de 2014, 12:41
- * GENEDADOR DE PARTIDAS
  * ::::::::::::::::::::::::::::::::::::::::::::INICIAR PARTIDA::::::::::::::::::::::::::::::::::::::::::::::::
- *  EN PROCESO
  */
 
 #include <stdio.h>
@@ -14,15 +8,6 @@
 #define MAX 8
 #define BLANCO 'x'
 #define NEGRO 'o'
-
-
-void crearTablero(char tablero[MAX+1][MAX+1]); //si se asigna un puntero libre habria que hacer una reserva dinamica de memoria
-void imprimirTablero(char  Tablero[MAX+1][MAX+1]);
-char crearTurno();
-void cambiarTurno(char *turno);
-void imprimirTurno(char turno);
-void imprimirCabecera();
-
 void crearTablero(char tablero[MAX+1][MAX+1]){
     int i, j;
     for(i=0; i<MAX+1; i++){
@@ -63,11 +48,11 @@ char crearTurno(){
      printf("\nficha elegida: %s", turno);
     return turno;
 }
-/*void cambiarTurno(char* turno){
-    if(strcmp( turno,  NEGRO)){
+void cambiarTurno(char* turno){
+    if(strcmp( * turno,  NEGRO)){
         *turno=BLANCO;
     }else{
         *turno=NEGRO;
     }
-}*/
+}
 
