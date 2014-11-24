@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include "partidas.h"
 
-
-/*
-/Recibe un tablero, una ficha y dos numeros
-/Devuelve 0 si la jugada no es valida y 1 si lo es.
-*/
+/*Recibe un tablero, una ficha y dos numeros
+/Devuelve 0 si la jugada no es valida y 1 si lo es.*/
 int comprobarMovimiento(char tablero[MAX + 1][MAX + 1], char ficha, int posx, int posy) {
     int i;
     if(tablero[x][y]!= VACIO)
@@ -140,18 +137,16 @@ int comprobarMovimiento(char tablero[MAX + 1][MAX + 1], char ficha, int posx, in
     return 0;
 }
 /*
-/Recibe un tablero y una ficha
-/Devuelve un 1 si hay jugadas posibles para la ficha dada y un 0 si no.
-*/
-comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha) {
+/Recibe un tablero y una ficha /Devuelve verdadero si hay jugadas posibles para la ficha dada y un 0 si falso.*/
+int comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha) {
     int i, j;
     for (i = 1; i < MAX + 1; i++) {
         for (j = 1; j < MAX + 1; j++) {
             if (comprobarMovimiento(tablero, ficha, i, j) == 1) 
-                return 1; 
+                return TRUE; 
         }
     }
-    return 0;
+    return FALSE;
 }
 
 void inicializarPartida(){
@@ -163,6 +158,7 @@ void inicializarPartida(){
     elegirFicha(&jugador1, &jugador2);
     crearTurno(turnoActual);
     imprimirTablero();
+    imprimirTurno(turnoActual);
     
     jugar=comprobarJugadasPosibles(&tablero);
     if(jugar){
