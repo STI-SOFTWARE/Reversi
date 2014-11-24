@@ -1,5 +1,5 @@
-/*partidas.h
- *  Created on: 24/11/2014  Author: Android
+/* GENEDADOR DE PARTIDAS
+ * 
  *         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Aqui se definen todas las funciones que ejecutaran las partidas
  */
 #ifndef PARTIDAS_H_
