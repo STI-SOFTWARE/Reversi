@@ -6,7 +6,7 @@
 extern "C" {
 #endif
 #define MAX 8
-#define Vacio '.'   //no recuerdo para que es esto xD 
+#define VACIO '.'   //no recuerdo para que es esto xD 
 
 void imprimirTablero(char Tablero[MAX + 1][MAX + 1]);
 void imprimirContador(char  tablero[][]);
