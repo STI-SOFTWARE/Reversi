@@ -6,13 +6,27 @@
 extern "C" {
 #endif
 
+#define BLANCO 'x'
+#define NEGRO 'o'
+#define DIM 3
+#define MAX 8
+#define VACIO '.'  
 
-void crearTurno();
-void elegirFicha(Jugador jugador1, Jugador jugador2);
-void cambiarTurno(char * turnoActual);
-Ficha crearFicha(char turno, int ejex, int ejey);
+    typedef struct {
+        char turno;
+        int ejex;
+        int ejey;
+    } Ficha;
 
-void crearTablero(char tablero[MAX + 1][MAX + 1]);
+    typedef struct {
+        char nombre[3];
+        char fichaElegida;
+    } Jugador;
+    void crearTurno();
+    void elegirFicha(Jugador *jugador1, Jugador *jugador2,char * turno);
+    void cambiarTurno(char * turnoActual);
+    Ficha crearFicha(char turno, int ejex, int ejey);
+    void crearTablero(char tablero[MAX + 1][MAX + 1]);
 
 
 
