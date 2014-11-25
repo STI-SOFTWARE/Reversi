@@ -1,7 +1,6 @@
 /* 
  * ::::::::::::::::::::::::::::::::::::::::::::INICIAR PARTIDA::::::::::::::::::::::::::::::::::::::::::::::::
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -48,7 +47,7 @@ char elegirTurno(){
     }
     return turno;
 }
-elegirFicha(Jugador jugador1, Jugador jugador2){
+void elegirFicha(Jugador jugador1, Jugador jugador2){
     char name[DIM];
     printf("\nPor favor jugador 1 inserte su nombre: ");
     scanf("%s", name);
@@ -61,4 +60,11 @@ elegirFicha(Jugador jugador1, Jugador jugador2){
         if(strcmp( jugador1.ficha,  NEGRO)){     jugador2.ficha=BLANCO; }
         else{                                   jugador2.ficha=NEGRO;}
     printf("\nBienvenido %s", jugador2.nombre);
+}
+Ficha crearFicha(char turno, int ejex, int ejey){
+    Ficha ficha;
+    ficha.turno=turno;
+    ficha.ejex=ejex;
+    ficha.ejey=ejey;
+    return ficha;
 }
