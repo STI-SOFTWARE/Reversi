@@ -4,9 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define BLANCO 'x'
-#define NEGRO 'o'
-#define DIM 3
+#include "cabecera.h"
+#include "inicializacion.h"
 void crearTablero(char tablero[MAX+1][MAX+1]){
     int i, j;
     for(i=0; i<MAX+1; i++){
@@ -47,19 +46,20 @@ char elegirTurno(){
     }
     return turno;
 }
-void elegirFicha(Jugador jugador1, Jugador jugador2){
+void elegirFicha(Jugador *jugador1, Jugador *jugador2,char * turno){
     char name[DIM];
     printf("\nPor favor jugador 1 inserte su nombre: ");
     scanf("%s", name);
-    strcpy(name, jugador1.nombre);
-    printf("\nBienvenido %s", jugador1.nombre);
-    jugador1.ficha=elegirTurno();
+    strcpy(name, jugador1->nombre);
+    printf("\nBienvenido %s", jugador1->nombre);
+    jugador1->fichaElegida=elegirTurno();
+    turno = jugador1->fichaElegida;
     printf("\nPor favor jugador 2 inserte su nombre: ");
     scanf("%s", name);
-    strcpy(name, jugador2.nombre);
-        if(strcmp( jugador1.ficha,  NEGRO)){     jugador2.ficha=BLANCO; }
-        else{                                   jugador2.ficha=NEGRO;}
-    printf("\nBienvenido %s", jugador2.nombre);
+    strcpy(name, jugador2->nombre);
+        if(strcmp( jugador1->fichaElegida,  NEGRO)){     jugador2->fichaElegida=BLANCO; }
+        else{                                   jugador2->fichaElegida=NEGRO;}
+    printf("\nBienvenido %s", jugador2->nombre);
 }
 Ficha crearFicha(char turno, int ejex, int ejey){
     Ficha ficha;
@@ -67,6 +67,4 @@ Ficha crearFicha(char turno, int ejex, int ejey){
     ficha.ejex=ejex;
     ficha.ejey=ejey;
     return ficha;
-
-    
 }
