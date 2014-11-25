@@ -14,8 +14,7 @@ int comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha);//boole
 //si se puede
 void insertarFichaEnTablero(Ficha ficha, char tablero[MAX + 1][MAX + 1]);
 
-    int comprobarTeclado(char fila, int columna);/*booleano, comprobamos lo que mete el usuario
-                                     hacemos un dowhile comprobando lo que recibimos por teclado*/
+    Ficha leerFichaPorTeclado(char turno);//Recibe el turno actual y por teclado las coord, devuelve una Ficha con las posiciones
     int comprobarMovimiento(char tablero[MAX + 1][MAX + 1], char ficha, int posx, int posy);
                                                             /*/Recibe un tablero, una ficha y dos numeros
                                                             /Devuelve 0 si la jugada no es valida y 1 si lo es.*/
