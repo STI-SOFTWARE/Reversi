@@ -10,7 +10,7 @@ extern "C" {
 void crearTurno();
 void elegirFicha(Jugador jugador1, Jugador jugador2);
 void cambiarTurno(char * turnoActual);
-Ficha crearFicha(char turno);
+Ficha crearFicha(char turno, int ejex, int ejey);
 
 void crearTablero(char tablero[MAX + 1][MAX + 1]);
 
