@@ -12,7 +12,7 @@ void crearTablero(char tablero[MAX+1][MAX+1]){
     int i, j;
     for(i=0; i<MAX+1; i++){
         for(j=0; j<MAX+1; j++){
-            tablero[i][j]=' ';
+            tablero[i][j]=VACIO;
         }   
     }
     for(i=1; i<=MAX; i++){
@@ -24,20 +24,15 @@ void crearTablero(char tablero[MAX+1][MAX+1]){
     tablero[5][4]= NEGRO;
     tablero [4][5]= NEGRO;
 }
-void imprimirTablero(char tablero[MAX+1][MAX+1]){
-    int i,j;
-    for(i=0; i<MAX+1; i++){
-        printf("\n");
-        for(j=0; j<MAX+1; j++){
-           printf("%c ",tablero[i][j]);
-        }
-    }
-}
+
 char crearTurno(){
     char turno;
-    int ficha;
+    int ficha=-1;
     do{
-        printf("\nElija la ficha: \n 1.X\n 2.O\n");
+        if(ficha!=-1){
+            printf("\n\t >>>>>>>>>>>>>>>Debe elegir una ficha permitida.");
+        }
+        printf("\nElija una ficha: \n 1.X\n 2.O\n");
         scanf("%d", ficha);
     }while(ficha!=1 || ficha!=2);
     if(ficha==1){
@@ -45,7 +40,6 @@ char crearTurno(){
     }else if(ficha==2){
         turno=NEGRO;
     }
-     printf("\nficha elegida: %s", turno);
     return turno;
 }
 void cambiarTurno(char* turno){
