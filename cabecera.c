@@ -40,4 +40,5 @@ void imprimirContador(char tablero[][]){
 }
 void imprimirTurno(char turno){
     printf("\n >>>>>>>>>>>>Turno de: %s", turno);
+    
 }
