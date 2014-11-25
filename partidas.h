@@ -25,5 +25,6 @@ void insertarFichaEnTablero(Ficha ficha, char tablero[MAX + 1][MAX + 1]);
 
 #ifdef	__cplusplus
 }
+
 #endif
 #endif /* PARTIDAS_H_ */
