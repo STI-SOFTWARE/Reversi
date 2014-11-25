@@ -160,8 +160,12 @@ void inicializarPartida(){
     imprimirTablero();
     imprimirTurno(turnoActual);
     
-    jugar=comprobarJugadasPosibles(&tablero);
+    jugar=comprobarJugadasPosibles(&tablero, turnoActual);
     if(jugar){
         
     }
+    else{
+        pasarTurno(&turnoActual);
+        //esto imprime que pasamos y cambia el turno    
+        }
 }
