@@ -148,21 +148,33 @@ int comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha) {
     }
     return FALSE;
 }
+Ficha leerFichaPorTeclado(char turno){
+    Ficha ficha;
+    char letra=VACIO;
+    int fila, columna;
+    do{
+        if(strcmp(letra, VACIO)){   printf("\n\t>>>>>>Debe insertar una ficha valida.");}   
+        printf("Escriba la fila en la que desea insertar la ficha:");
+        fflush(stdio);
+        fila=getche();
+    }while(letra<61 || letra>68);
+    ficha=crearFicha(turno, fila, columna-1);
+}
 
 void inicializarPartida(){
     int jugar=-1;
-    Turno turnoActual;
+    char turnoActual;//un unico turno que va cambiando
     Jugador jugador1, jugador2;
     char tablero[MAX][MAX];
     crearTablero(&tablero);
-    elegirFicha(&jugador1, &jugador2);
+    elegirFicha(&jugador1, &jugador2);//
     crearTurno(turnoActual);
     imprimirTablero();
     imprimirTurno(turnoActual);
     
     jugar=comprobarJugadasPosibles(&tablero, turnoActual);
     if(jugar){
-        
+        insertarFichaEnTablero(leerFichaPorTeclado(turnoActual), &tablero);
     }
     else{
         pasarTurno(&turnoActual);
