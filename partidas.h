@@ -10,7 +10,7 @@ extern "C" {
 #endif
 int comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha);//booleano, se pueden hacer jugadas?
 //si no se pueden hacer jugadas
-    void pasarTurno(Ficha * ficha);//Imprimimos la ficha que pasa turno y hacemos cambiarTurno()
+    void pasarTurno(char * turnoActual);//Imprimimos la ficha que pasa turno y hacemos cambiarTurno()
 //si se puede
 void insertarFichaEnTablero(Ficha ficha, char tablero[MAX + 1][MAX + 1]);
 
