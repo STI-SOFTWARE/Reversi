@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "partidas.h"
-
+#include 'partidas.h'
+enum{TRUE=1, FALSE=0,}Boolean;
 /*Recibe un tablero, una ficha y dos numeros
-/Devuelve 0 si la jugada no es valida y 1 si lo es.*/
+/Devuelve falso si la jugada no es valida y verdadero si lo es.*/
 int comprobarMovimiento(char tablero[MAX + 1][MAX + 1], char ficha, int posx, int posy) {
     int i;
     if(tablero[x][y]!= VACIO)
@@ -148,18 +148,40 @@ int comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha) {
     }
     return FALSE;
 }
+/*Recibe el turno que juega y lee por teclado las coord, devuelve una ficha creada con estos*/
 Ficha leerFichaPorTeclado(char turno){
     Ficha ficha;
     char letra=VACIO;
-    int fila, columna;
+    int fila, columna=-1;
     do{
-        if(strcmp(letra, VACIO)){   printf("\n\t>>>>>>Debe insertar una ficha valida.");}   
-        printf("Escriba la fila en la que desea insertar la ficha:");
+        if(!strcmp(letra, VACIO)){   printf("\n\t>>>>>>Debe insertar una ficha valida.");}   
+        printf("Escriba la fila en la que desea insertar la ficha (letra entre a y h):");
         fflush(stdio);
         fila=getche();
     }while(letra<61 || letra>68);
+    fila=toupper(letra);
+     do{
+        if(columna!=-1){   printf("\n\t>>>>>>Debe insertar una columna valida.");}   
+        printf("Escriba la columna en la que desea insertar la ficha (entero entre 1 y 8):");
+        scanf("%d", &columna);
+    }while(columna<1 || columna>8);
     ficha=crearFicha(turno, fila, columna-1);
 }
+void insertarFichaEnTablero(Ficha ficha, char tablero[MAX + 1][MAX + 1]){
+    if(comprobarMovimiento(&tablero, ficha.turno, ficha.ejex, ficha.ejey)==TRUE){
+        guardarFicha(ficha, &tablero);
+        if(buscarGanador(&tablero)){//tambien entra con EMPATE
+            imprimirGanador(&tablero);//esto en cabecera*****************************************
+                /*tambien imprime el EMPATE
+                int finDePartida(char tablero[MAX + 1][MAX + 1]);//booleano, tablero lleno?
+                int contarFichas(char turno, char tablero[MAX + 1][MAX + 1]);
+                */
+        }
+    }else{
+        //jugada no valida------->vuelve a leerporteclado
+    }
+}
+    
 
 void inicializarPartida(){
     int jugar=-1;
@@ -175,9 +197,8 @@ void inicializarPartida(){
     jugar=comprobarJugadasPosibles(&tablero, turnoActual);
     if(jugar){
         insertarFichaEnTablero(leerFichaPorTeclado(turnoActual), &tablero);
-    }
-    else{
-        pasarTurno(&turnoActual);
-        //esto imprime que pasamos y cambia el turno    
+    }else{
+        pasarTurno(&turnoActual);    //esto imprime que pasamos   
         }
+    cambiarTurno(&turnoActual);
 }
