@@ -14,7 +14,7 @@ void imprimirTablero(char tablero[MAX+1][MAX+1]){
 int imprimirMenu(){
     int opcion=-1;
     do{
-        if(opcion!=1 || opcion!=2){
+        if(opcion!=-1 ){
             printf("\t>>>>>>>>>>>Debe elegir una opcion válida.\n");
         }
         printf("Elija una opcion de menu.\n\t 1. Jugar.\n\t 2. Salir.\n");
