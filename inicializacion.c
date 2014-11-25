@@ -67,4 +67,6 @@ Ficha crearFicha(char turno, int ejex, int ejey){
     ficha.ejex=ejex;
     ficha.ejey=ejey;
     return ficha;
+
+    
 }
