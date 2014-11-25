@@ -18,7 +18,7 @@ typedef struct{
     char fichaElegida;
 }Jugador;
 enum {TRUE=1, FALSE=0}Boolean;
-enum {A=0,B,C,D,E,F,G,H};
+enum {A=0,B,C,D,E,F,G,H}Letras;
 
 void main(){
     int opcion=-1;
