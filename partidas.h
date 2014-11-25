@@ -8,13 +8,12 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
-void insertarFichaEnTablero(Ficha ficha, char tablero[MAX + 1][MAX + 1]);
-            
-    int comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha)//booleano, se pueden hacer jugadas?
-    //si no se pueden hacer jugadas
+int comprobarJugadasPosibles(char tablero[MAX + 1][MAX + 1], char ficha);//booleano, se pueden hacer jugadas?
+//si no se pueden hacer jugadas
     void pasarTurno(Ficha * ficha);//Imprimimos la ficha que pasa turno y hacemos cambiarTurno()
-    //si se puede
+//si se puede
+void insertarFichaEnTablero(Ficha ficha, char tablero[MAX + 1][MAX + 1]);
+
     int comprobarTeclado(char fila, int columna);/*booleano, comprobamos lo que mete el usuario
                                      hacemos un dowhile comprobando lo que recibimos por teclado*/
     int comprobarMovimiento(char tablero[MAX + 1][MAX + 1], char ficha, int posx, int posy);
