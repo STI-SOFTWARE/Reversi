@@ -5,9 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAX 8
 #define BLANCO 'x'
 #define NEGRO 'o'
+#define DIM 3
 void crearTablero(char tablero[MAX+1][MAX+1]){
     int i, j;
     for(i=0; i<MAX+1; i++){
@@ -24,8 +24,14 @@ void crearTablero(char tablero[MAX+1][MAX+1]){
     tablero[5][4]= NEGRO;
     tablero [4][5]= NEGRO;
 }
-
-char crearTurno(){
+void cambiarTurno(char* turno){
+    if(strcmp( * turno,  NEGRO)){
+        *turno=BLANCO;
+    }else{
+        *turno=NEGRO;
+    }
+}
+char elegirTurno(){
     char turno;
     int ficha=-1;
     do{
@@ -42,11 +48,17 @@ char crearTurno(){
     }
     return turno;
 }
-void cambiarTurno(char* turno){
-    if(strcmp( * turno,  NEGRO)){
-        *turno=BLANCO;
-    }else{
-        *turno=NEGRO;
-    }
+elegirFicha(Jugador jugador1, Jugador jugador2){
+    char name[DIM];
+    printf("\nPor favor jugador 1 inserte su nombre: ");
+    scanf("%s", name);
+    strcpy(name, jugador1.nombre);
+    printf("\nBienvenido %s", jugador1.nombre);
+    jugador1.ficha=elegirTurno();
+    printf("\nPor favor jugador 2 inserte su nombre: ");
+    scanf("%s", name);
+    strcpy(name, jugador2.nombre);
+        if(strcmp( jugador1.ficha,  NEGRO)){     jugador2.ficha=BLANCO; }
+        else{                                   jugador2.ficha=NEGRO;}
+    printf("\nBienvenido %s", jugador2.nombre);
 }
-
