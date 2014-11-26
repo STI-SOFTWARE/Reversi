@@ -34,9 +34,10 @@ char elegirTurno(){
     int ficha=-1;
     do{
         if(ficha!=-1){
-            printf("\n\t >>>>>>>>>>>>>>>Debe elegir una ficha permitida.");
+            printf("\n\t >>>>>>>>Debe elegir una ficha permitida.");
         }
-        printf("\nElija una ficha: \n 1.X\n 2.O\n");
+        printf("\nFichas\n\t 1.X\n\t 2.O\nElija una ficha: ");
+		fflush(stdout);
         scanf("%d", ficha);
     }while(ficha!=1 || ficha!=2);
     if(ficha==1){
@@ -46,20 +47,24 @@ char elegirTurno(){
     }
     return turno;
 }
-void elegirFicha(Jugador *jugador1, Jugador *jugador2,char * turno){
+/*la estructura de Jugador debe ser
+typedef struct{ char fichaElegida; char nombre[DIM]*/
+void elegirFicha(Jugador jugador1, Jugador jugador2){
     char name[DIM];
+	char negro=NEGRO;
     printf("\nPor favor jugador 1 inserte su nombre: ");
+	fflush(stdout);//limpiamos la cola de impresion(la despachamos a la pantalla)
     scanf("%s", name);
-    strcpy(name, jugador1->nombre);
-    printf("\nBienvenido %s", jugador1->nombre);
-    jugador1->fichaElegida=elegirTurno();
-    turno = jugador1->fichaElegida;
+    strcpy( jugador1.nombre,name);//si sale error aqui esque la c1 necesita ser &c1, la c2 no
+    printf("\nBienvenido %s", jugador1.nombre);
+    jugador1.fichaElegida=elegirTurno();
     printf("\nPor favor jugador 2 inserte su nombre: ");
+	fflush(stdout);
     scanf("%s", name);
-    strcpy(name, jugador2->nombre);
-        if(strcmp( jugador1->fichaElegida,  NEGRO)){     jugador2->fichaElegida=BLANCO; }
-        else{                                   jugador2->fichaElegida=NEGRO;}
-    printf("\nBienvenido %s", jugador2->nombre);
+    strcpy(jugador2.nombre, name);
+        if(strcmp( jugador1.fichaElegida,  negro)!=0){     jugador2.fichaElegida=BLANCO; }
+        else{                                   jugador2.fichaElegida=NEGRO;}
+    printf("\nBienvenido %s", jugador2.nombre);
 }
 Ficha crearFicha(char turno, int ejex, int ejey){
     Ficha ficha;
